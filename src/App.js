@@ -6,7 +6,7 @@ import Navber from './component/Navber/Navber';
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <Navber></Navber>
    
 <Routes>

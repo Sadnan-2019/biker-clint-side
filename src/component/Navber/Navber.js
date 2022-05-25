@@ -22,13 +22,13 @@ const Navber = () => {
     </>
   );
   return (
-    <div class="navbar bg-base-100">
-      <div class="navbar-start">
-        <div class="dropdown">
-          <label tabindex="0" class="btn btn-ghost lg:hidden">
+    <div className="navbar bg-base-100">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <label tabindex="0" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
+              className="h-5 w-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -43,22 +43,22 @@ const Navber = () => {
           </label>
           <ul
             tabindex="0"
-            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
           {navItems}
           </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-xl">
+        <a className="btn btn-ghost normal-case text-xl">
           Our Agro Manufecture House
         </a>
       </div>
-      <div class="navbar-center hidden lg:flex">
-        <ul class="menu menu-horizontal p-0">
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal p-0">
         {navItems}
         </ul>
       </div>
-      <div class="navbar-end">
-        <a class="btn">Login</a>
+      <div className="navbar-end">
+        <a className="btn">Login</a>
       </div>
     </div>
   );
