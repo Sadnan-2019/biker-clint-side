@@ -1,6 +1,7 @@
 import React from "react";
 import Business from "../Business/Business";
 import Category from "../Category/Category";
+import Footer from "../Footer/Footer";
 import Gallery from "../Gallery/Gallery";
 import Review from "../Review/Review";
 import Team from "../Team/Team";
@@ -19,6 +20,7 @@ const Home = () => {
       <Review></Review>
       <Gallery></Gallery>
       <Business></Business>
+      <Footer></Footer>
     </div>
   );
 };
