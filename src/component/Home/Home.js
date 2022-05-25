@@ -1,4 +1,5 @@
 import React from "react";
+import Tools from "../Tools/Tools";
 import Bannerr from "./Bannerr";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
      
     
       <Bannerr></Bannerr>
+      <Tools></Tools>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 
 const Bannerr = () => {
   return (
-    <div className="hero min-h-screen bg-slate-300 mt-5 ">
+    <div className="hero min-h-screen bg-slate-300  ">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img alt=""
           src="https://kakguan.com.sg//image/cache/catalog/images/banner-767x600.jpg"
