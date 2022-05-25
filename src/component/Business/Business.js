@@ -7,7 +7,7 @@ const Business = () => {
         Our Business Summery
       </h2>
 
-      <div class="stats shadow grid sm:grid-cols-1 lg:grid-cols-3 px-8 py-8">
+      <div class="stats shadow grid sm:grid-cols-1 lg:grid-cols-3 px-8 py-8  ">
   
   <div class="stat">
     <div class="stat-figure text-primary">

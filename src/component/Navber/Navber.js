@@ -19,6 +19,9 @@ const Navber = () => {
       <li>
         <Link to="/">Make Admin</Link>
       </li>
+      <li>
+        <Link to="/login">Login</Link>
+      </li>
     </>
   );
   return (
@@ -48,7 +51,7 @@ const Navber = () => {
           {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">
+        <a className="btn btn-ghost normal-case text-xl" href="">
           Our Bike Manufecture House
         </a>
       </div>
@@ -58,7 +61,7 @@ const Navber = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Login</a>
+        <a className="btn">My Portfolio</a>
       </div>
     </div>
   );
