@@ -49,7 +49,7 @@ const Navber = () => {
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-xl">
-          Our Agro Manufecture House
+          Our Bike Manufecture House
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">

@@ -9,7 +9,7 @@ const Bannerr = () => {
           className="max-w-sm rounded-lg shadow-2xl"
         />
         <div className="p-5">
-          <h1 className="text-5xl font-bold">We Provide Best Agro Tools </h1>
+          <h1 className="text-5xl font-bold">We Provide Best Manufecture for Clint Satisfection  </h1>
           <p className="py-6 font-bold">
             Milking Machine, Cream Separator, Chaff Cutter, Automated Cow Brush,
             Rubber Mat, Feeder Bottle, Veterinary Items and All kinds of
