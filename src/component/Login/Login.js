@@ -31,6 +31,7 @@ const Login = () => {
           <button class="btn btn-primary">Login</button>
         </div>
       </div>
+      <button class="btn btn-primary  mb-5">SignInWith Google</button>
     </div>
       </div>
     </div>
