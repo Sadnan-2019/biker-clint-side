@@ -4,7 +4,7 @@ import Tool from "../Tool/Tool";
 const Tools = () => {
   const [tools, setTools] = useState([]);
   useEffect(() => {
-    fetch("products.json")
+    fetch("http://localhost:5000/tools")
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, []);
@@ -15,7 +15,7 @@ const Tools = () => {
       </h2>
       <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-12">
         {tools.map((tool) => (
-          <Tool key={tool.id} tool={tool}></Tool>
+          <Tool key={tool._id} tool={tool}></Tool>
         ))}
       </div>
     </div>

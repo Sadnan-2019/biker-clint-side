@@ -1,47 +1,71 @@
+import { async } from "@firebase/util";
 import React from "react";
-import auth from "../../firebase.init";
 import {
-  useSignInWithEmailAndPassword,
   useSignInWithGoogle,
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import Loading from "../Loading/Loading";
 import { Link, useNavigate } from "react-router-dom";
 
-const Login = () => {
-  const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+import auth from "../../firebase.init";
+import Loading from "../Loading/Loading";
 
-  const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] =
+
+const SignUp = () => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+  const [signInWithGoogle, googleUser, googleUserloading, googleUsererror] =
     useSignInWithGoogle(auth);
-  let signInrror;
+
+  const [updateProfile, updating, updatingError] = useUpdateProfile(auth);
+
+
+
+  const navigate =useNavigate()
 
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
-  const navigate =useNavigate()
-
-  const onSubmit = (data) => {
-    console.log(data);
-    signInWithEmailAndPassword(data.email, data.password);
-  };
-  if (userGoogle || user) {
+  let signInrror;
+  if (googleUser || user) {
+    console.log(user);
     navigate("/")
-    console.log(userGoogle);
+
   }
-  if (errorGoogle || error) {
+
+  if (loading || googleUserloading || updating) {
+    return <Loading></Loading>;
+  }
+
+  if (error || googleUsererror || updatingError) {
     signInrror = (
-      <p className="text-red-500 ">{errorGoogle?.message || error?.message}</p>
+      <p className="text-red-500 ">
+        {error.message || googleUsererror.message || updatingError.message}
+      </p>
     );
   }
-  if (loading || loadingGoogle) {
-   return <Loading></Loading>;
-  }
+
+  const onSubmit = async (data) => {
+    console.log(data);
+
+    await createUserWithEmailAndPassword(data?.email, data?.password);
+    await updateProfile({ displayName: data?.name });
+    navigate("/")
+    console.log("update done");
+    console.log("update done",data.email,data.displayName);
+  };
 
   return (
-    <div className="mt-12">
+//     
+
+
+
+
+
+<div className="mt-12">
       <div
         className="hero min-h-screen py-10"
         style={{
@@ -51,8 +75,44 @@ const Login = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
-            <h4 className="text-center text-2xl font-bold">Login</h4>
+            <h4 className="text-center text-2xl font-bold">Register</h4>
             <form onSubmit={handleSubmit(onSubmit)}>
+
+            <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  {...register("name", {
+                    required: {
+                      value: true,
+                      message: "Please file the Name field",
+                    },
+                    
+                  })}
+                  type="name"
+                  placeholder="your email"
+                  className="input input-bordered w-full max-w-xs"
+                />
+                <label className="label">
+                  {errors.email?.type === "required" && (
+                    <span className="label-text-alt text-red-600">
+                      {errors.email.message}
+                    </span>
+                  )}
+                  {errors.email?.type === "pattern" && (
+                    <span className="label-text-alt text-red-600">
+                      {errors.email.message}
+                    </span>
+                  )}
+                </label>
+              </div>
+
+
+
+
+
+
               <div className="form-control w-full max-w-xs">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -119,18 +179,18 @@ const Login = () => {
                 </label>
               </div>
 
-              <input type="submit" className="btn btn-primary" value="Login" />
+              <input type="submit" className="btn btn-primary" value="Register" />
               {signInrror}
             </form>
 
             <p>
-              <small className="text-primary">
-                New to this site?{" "}
-                <Link className="btn btn-link text-primary" to="/signup">
-                  Create New Account
-                </Link>
-              </small>
-            </p>
+             <small className="text-primary">
+               Already Account?{" "}
+              <Link className="btn btn-link text-primary" to="/login">
+                 Login
+               </Link>
+             </small>
+           </p>
 
             <div className="divider">OR</div>
 
@@ -147,4 +207,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
