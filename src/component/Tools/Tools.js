@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
+import useTools from "../../hooks/useTools";
 import Tool from "../Tool/Tool";
 
 const Tools = () => {
-  const [tools, setTools] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/tools")
-      .then((res) => res.json())
-      .then((data) => setTools(data));
-  }, []);
+  const [tools, setTools] = useTools();
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/tools")
+  //     .then((res) => res.json())
+  //     .then((data) => setTools(data));
+  // }, []);
   return (
     <div>
       <h2 className="text-center text-slate-800 text-4xl font-bold   py-10">

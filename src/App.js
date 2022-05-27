@@ -8,6 +8,7 @@ import Footer from './component/Footer/Footer';
 import SignUp from './component/SignUp/SignUp';
 import Purchase from './component/Purchase/Purchase';
 import AddProduct from './component/Product/AddProduct';
+import ManageTools from './component/ManageTools/ManageTools';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
   <Route path="/" element={<Home/>}></Route>
   <Route path="login" element={<Login/>}></Route>
   <Route path="/signup" element={<SignUp />}></Route>
-  <Route path="/add-product" element={<AddProduct />}></Route>
+  <Route path="/add-tools" element={<AddProduct />}></Route>
+  <Route path="/manage-tools" element={<ManageTools />}></Route>
 
 
   {/* ////////purchase made require */}

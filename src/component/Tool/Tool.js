@@ -21,13 +21,13 @@ const Tool = ({ tool }) => {
         <img
           src={img}
           alt=""
-          className="rounded-xl w-[80%]   "
+          className="rounded-xl w-[50%]   "
         />
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title">Name:{name}</h2>
-        <p>Short-Description:{shortdescription}</p>
-        <p>Available-Quentity:{availablequantity}</p>
+        <p className="text-justify">Short-Description:{shortdescription}</p>
+        <p className="text-justify">Available-Quentity:{availablequantity}</p>
         <div className="card-actions">
           <button className="btn btn-primary" onClick={()=>navigatePurchase(_id)}>Buy Now</button>
         </div>

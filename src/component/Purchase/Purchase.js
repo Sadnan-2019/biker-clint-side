@@ -25,10 +25,11 @@ const Purchase = () => {
             />
           </figure>
           <div class="card-body items-center text-center">
-            <h2 class="card-title font-bold">{purchase.name}</h2>
+            <h2 class="card-title font-bold">   {purchase.name}</h2>
             <p className="font-bold">Short-Description:{purchase.shortdescription}</p>
-            <p className="font-bold">Minimum Quentity:{purchase.minimumquantity}</p>
-            <p className="font-bold">Available Quentity:{purchase.availablequantity}</p>
+            <p className="font-bold">Price: ${purchase.price}</p>
+            <p className="font-bold">Minimum Quentity: {purchase.minimumquantity}</p>
+            <p className="font-bold">Available Quentity: {purchase.availablequantity}</p>
             
           </div>
         </div>

@@ -22,10 +22,10 @@ const Navber = () => {
         <Link to="/">Manage All Orders</Link>
       </li>
       <li>
-        <Link to="/add-product">Add Product</Link>
+        <Link to="/add-tools">Add Tool</Link>
       </li>
       <li>
-        <Link to="/">Manage Products</Link>
+        <Link to="/manage-tools">Manage Tools</Link>
       </li>
       <li>
         <Link to="/">Make Admin</Link>
