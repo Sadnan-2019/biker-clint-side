@@ -16,12 +16,12 @@ const Tool = ({ tool }) => {
 
   }
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-      <figure className="px-10 pt-10">
+    <div className="card  bg-base-100 shadow-xl ">
+      <figure className="px-10 pt-10 ">
         <img
           src={img}
-          alt="Shoes"
-          className="rounded-xl"
+          alt=""
+          className="rounded-xl w-[80%]   "
         />
       </figure>
       <div className="card-body items-center text-center">

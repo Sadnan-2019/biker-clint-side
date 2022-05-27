@@ -7,6 +7,7 @@ import Login from './component/Login/Login';
 import Footer from './component/Footer/Footer';
 import SignUp from './component/SignUp/SignUp';
 import Purchase from './component/Purchase/Purchase';
+import AddProduct from './component/Product/AddProduct';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
   <Route path="/" element={<Home/>}></Route>
   <Route path="login" element={<Login/>}></Route>
   <Route path="/signup" element={<SignUp />}></Route>
+  <Route path="/add-product" element={<AddProduct />}></Route>
+
+
   {/* ////////purchase made require */}
   <Route path="/purchase/:toolId" element={<Purchase />}></Route> 
   {/* ////////purchase made require  */}
