@@ -13,6 +13,7 @@ import RequireAuth from "./component/RequireAuth/RequireAuth";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import ManageOrders from "./component/ManageOrders/ManageOrders";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/manage-orders" element={<ManageOrders />}></Route>
         <Route
           path="/add-tools"
           element={

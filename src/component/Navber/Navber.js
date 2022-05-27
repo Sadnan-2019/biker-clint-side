@@ -19,14 +19,14 @@ const Navber = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/">Manage All Orders</Link>
+        <Link to="/manage-orders">Manage All Orders</Link>
       </li>
-      <li>
+      {user && <li>
         <Link to="/add-tools">Add Tool</Link>
-      </li>
-      <li>
+      </li>}
+      {user && <li>
         <Link to="/manage-tools">Manage Tools</Link>
-      </li>
+      </li>}
       <li>
         <Link to="/">Make Admin</Link>
       </li>
@@ -72,7 +72,7 @@ const Navber = () => {
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-xl" href="">
-         <img className="w-20" src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/178218993/original/4a8fce7a4da367e67c1d7842e04fa817c881ebbf/design-amazing-motorcycle-or-bike-logo.jpg"/>
+         <img className= "w-20" alt="" src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/178218993/original/4a8fce7a4da367e67c1d7842e04fa817c881ebbf/design-amazing-motorcycle-or-bike-logo.jpg"/>
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">

@@ -127,7 +127,7 @@ const handlePurchase=(event)=>{
             </div>
 <div className="grid lg:grid-cols-3 m-4">
 <button className="btn btn-secondary m-4">-</button>
-<input type="number"  class="   input input-bordered w-full max-w-xs " name="totalQuentity"   value={purchase.minimumquantity} />
+<input type="number"  class="   input input-bordered w-full max-w-xs "  name="totalQuentity"   value={purchase.minimumquantity} />
 <button className="btn btn-primary m-4">+</button>
 </div>
 
