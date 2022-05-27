@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const Purchase = () => {
@@ -13,15 +14,58 @@ const Purchase = () => {
       .then((res) => res.json())
       .then((data) => setPurchase(data));
   }, []);
+
+  const {_id,name,price,shortdescription,availablequantity,minimumquantity,suppliername,img} = purchase;
+ 
+
+const handlePurchase=(event)=>{
+  event.preventDefault();
+  console.log("kkk")
+  const orders={
+
+    toolsId: _id,
+    toolsName: name,
+    price: price,
+    img: img,
+    suppliername:suppliername,
+    customerName:user.displayName,
+    customerEmail:user.email,
+    address:event.target.address.value,
+    phone:event.target.phone.value,
+    totalQuentity:event.target.totalQuentity.value,
+    
+  }
+  // console.log(orders)
+
+  fetch(`http://localhost:5000/orders`,{
+    method:"POST",
+    headers:{
+      "content-type" : "application/json"
+    },
+    body:JSON.stringify(orders)
+
+  })
+  .then(res => res.json())
+  .then(data =>{
+
+    console.log(data)
+    toast("Orders done")
+    
+  })
+
+
+
+}
+
   return (
     <div class="hero min-h-screen bg-base-200">
       <div class="hero-content flex-col lg:flex-row-reverse">
         <div class="card w-96 bg-base-100 shadow-xl">
-          <figure class="px-10 pt-10">
+          <figure class="px-10 pt-10 ">
             <img
               src={purchase.img}
               alt="Shoes"
-              class="rounded-xl"
+              class="rounded-xl w-[50%] "
             />
           </figure>
           <div class="card-body items-center text-center">
@@ -35,7 +79,7 @@ const Purchase = () => {
         </div>
         <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div class="card-body">
-                    <form >
+                    <form onSubmit={handlePurchase}>
             <div class="form-control">
               <label class="label">
                 <span class="label-text">Email</span>
@@ -67,6 +111,7 @@ const Purchase = () => {
                 type="text"
                 placeholder="Address"
                 class="input input-bordered"
+                name="address"
               />
             </div>
             <div class="form-control">
@@ -77,18 +122,19 @@ const Purchase = () => {
                 type="text"
                 placeholder="Phone"
                 class="input input-bordered"
+                name="phone"
               />
             </div>
 <div className="grid lg:grid-cols-3 m-4">
 <button className="btn btn-secondary m-4">-</button>
-<input type="number"  class="   input input-bordered w-full max-w-xs "   value={purchase.minimumquantity} />
+<input type="number"  class="   input input-bordered w-full max-w-xs " name="totalQuentity"   value={purchase.minimumquantity} />
 <button className="btn btn-primary m-4">+</button>
 </div>
 
             <div class="form-control mt-6">
 
 
-              <input class="btn btn-primary" value="Order"/>
+              <input class="btn btn-primary" type="submit" value="Order"/>
             </div>
             </form>
           </div>
