@@ -1,16 +1,35 @@
+import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import Loading from "../Loading/Loading";
 
 const MyOrder = () => {
   const [orders, setOrder] = useState([]);
   const [user, loading, error] = useAuthState(auth);
+  const navigate=useNavigate();
  
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/order?customerEmail=${user.email}`)
-        .then((res) => res.json())
+      fetch(`http://localhost:5000/order?customerEmail=${user.email}`,{
+          method: "GET",
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+
+      })
+        .then((res) => {
+                  console.log("res",res)
+                  if(res.status === 403  || res.status === 401){
+                            signOut(auth);
+                            localStorage.removeItem("accessToken")
+                            navigate("/")
+
+
+                  }
+          return res.json()
+        })
         .then((data) => setOrder(data));
     }
   }, [user]);
@@ -18,9 +37,9 @@ const MyOrder = () => {
 
   return (
     <div>
-      <h3>my order:{orders.length}</h3>
+      {/* <h3>my order:{orders.length}</h3> */}
       <div class="overflow-x-auto">
-        <h3 className="text-2xl text-center font-bold mb-4">Manage Orders</h3>
+        <h3 className="text-2xl text-center font-bold mb-4">My Orders</h3>
         <table class="table w-full">
           <thead>
             <tr>
