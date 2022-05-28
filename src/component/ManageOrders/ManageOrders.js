@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const ManageOrders = () => {
-
-          const [orders, setOrders] = useState([]);
-          useEffect(()=>{
-
-                    fetch("http://localhost:5000/manage-orders")
-     .then((res) => res.json())
-     .then((data) => setOrders(data));
-          },[])
-          return (
-                    <div>
-                           <div class="overflow-x-auto">
+  const [orders, setOrders] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/manage-orders")
+      .then((res) => res.json())
+      .then((data) => setOrders(data));
+  }, []);
+  return (
+    <div>
+      <div class="overflow-x-auto">
         <h3 className="text-2xl text-center font-bold mb-4">Manage Orders</h3>
         <table class="table w-full">
           <thead>
@@ -33,7 +31,6 @@ const ManageOrders = () => {
                 <th>{i + 1}</th>
                 <td>{order.toolsName}</td>
                 <td>${order.price}</td>
-              
 
                 <td>{order.customerName}</td>
                 <td>{order.customerEmail}</td>
@@ -42,14 +39,13 @@ const ManageOrders = () => {
                 <td>
                   <img src={order.img} alt="" className="w-[20%]" />
                 </td>
-                
               </tr>
             ))}
           </tbody>
         </table>
-      </div>  
-                    </div>
-          );
+      </div>
+    </div>
+  );
 };
 
 export default ManageOrders;
