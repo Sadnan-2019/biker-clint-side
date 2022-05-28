@@ -33,6 +33,9 @@ const Navber = () => {
       <li>
         <Link to="/">Blogs</Link>
       </li>
+      { user && <li>
+        <Link to="/dashboard">Dashboard</Link>
+      </li>}
       {user? <button className="btn  btn-primary" onClick={logout}>
             SignOut
           </button> :<li>
