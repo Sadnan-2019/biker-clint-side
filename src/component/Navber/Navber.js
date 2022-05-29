@@ -31,9 +31,7 @@ const Navber = () => {
           <Link to="/manage-tools">Manage Tools</Link>
         </li>
       )}
-      <li>
-        <Link to="/">Make Admin</Link>
-      </li>
+      
       <li>
         <Link to="/">Blogs</Link>
       </li>

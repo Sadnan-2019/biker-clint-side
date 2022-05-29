@@ -101,6 +101,7 @@ const handlePurchase=(event)=>{
                 placeholder="Name"
                 class="input input-bordered"
                 value={user?.displayName}
+                disabled
               />
             </div>
             <div class="form-control">
@@ -112,6 +113,7 @@ const handlePurchase=(event)=>{
                 placeholder="Address"
                 class="input input-bordered"
                 name="address"
+                required
               />
             </div>
             <div class="form-control">
@@ -123,6 +125,7 @@ const handlePurchase=(event)=>{
                 placeholder="Phone"
                 class="input input-bordered"
                 name="phone"
+                required
               />
             </div>
 <div className="grid lg:grid-cols-3 m-4">

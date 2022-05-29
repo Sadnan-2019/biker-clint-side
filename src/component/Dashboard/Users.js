@@ -7,7 +7,7 @@ import User from "./User";
 const Users = () => {
   // const [users,setUsers] = useState([])
 
-  const { data: users, isLoading } = useQuery("users", () =>
+  const { data: users, isLoading,refetch } = useQuery("users", () =>
     fetch("http://localhost:5000/users", {
       method: "GET",
       headers: {
@@ -27,14 +27,16 @@ const Users = () => {
         <table class="table w-full">
           <thead>
             <tr>
-              <th></th>
+              <th>SL No</th>
+             
               <th>Email</th>
-              <th className="text-center">Action</th>
+              <th >Action</th>
+             
             </tr>
           </thead>
           <tbody>
             {users.map((user, i) => (
-              <User key={user._id} user={user} i={i}></User>
+              <User key={user._id} user={user} i={i} refetch={refetch}></User>
             ))}
           </tbody>
         </table>
