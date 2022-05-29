@@ -3,10 +3,12 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import useAdmin from "../../hooks/useAdmin";
 
 const Navber = () => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
+  const [admin] = useAdmin(user)
   const logout = () => {
     signOut(auth);
     localStorage.removeItem("accessToken")
@@ -18,19 +20,19 @@ const Navber = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
-      <li>
+      { admin ? <li>
         <Link to="/manage-orders">Manage All Orders</Link>
-      </li>
-      {user && (
+      </li> : ''}
+      {admin ? 
         <li>
           <Link to="/add-tools">Add Tool</Link>
-        </li>
-      )}
-      {user && (
+        </li> : ""
+      }
+      {admin ?  
         <li>
           <Link to="/manage-tools">Manage Tools</Link>
-        </li>
-      )}
+        </li> : ""
+      }
       
       <li>
         <Link to="/blogs">Blogs</Link>

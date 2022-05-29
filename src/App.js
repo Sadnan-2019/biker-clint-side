@@ -6,6 +6,7 @@ import Navber from "./component/Navber/Navber";
 import Login from "./component/Login/Login";
 import Footer from "./component/Footer/Footer";
 import SignUp from "./component/SignUp/SignUp";
+import Blogs from "./component/Blogs/Blogs";
 import Purchase from "./component/Purchase/Purchase";
 import AddProduct from "./component/Product/AddProduct";
 import ManageTools from "./component/ManageTools/ManageTools";
@@ -19,7 +20,6 @@ import MyOrder from "./component/Dashboard/MyOrder";
 import AddReview from "./component/Dashboard/AddReview";
 import MyProfile from "./component/Dashboard/MyProfile";
 import Users from "./component/Dashboard/Users";
-import Blogs from "./component/Blogs/Blogs";
 
 function App() {
   return (
@@ -29,8 +29,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="login" element={<Login />}></Route>
-        <Route path="login" element={<Login />}></Route>
-        <Route path="/blogs" element={<Blogs />}></Route>
+        {/* <Route path="login" element={<Login />}></Route> */}
+        <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/blogs" element={<Blogs/>}></Route>
+
 
         <Route path="/manage-orders" element={<RequireAuth>
 
