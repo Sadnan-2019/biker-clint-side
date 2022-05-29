@@ -19,6 +19,7 @@ import MyOrder from "./component/Dashboard/MyOrder";
 import AddReview from "./component/Dashboard/AddReview";
 import MyProfile from "./component/Dashboard/MyProfile";
 import Users from "./component/Dashboard/Users";
+import Blogs from "./component/Blogs/Blogs";
 
 function App() {
   return (
@@ -28,7 +29,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="login" element={<Login />}></Route>
-        <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="login" element={<Login />}></Route>
+        <Route path="/blogs" element={<Blogs />}></Route>
+
         <Route path="/manage-orders" element={<RequireAuth>
 
           <ManageOrders />

@@ -33,7 +33,7 @@ const Navber = () => {
       )}
       
       <li>
-        <Link to="/">Blogs</Link>
+        <Link to="/blogs">Blogs</Link>
       </li>
       {user && (
         <li>
