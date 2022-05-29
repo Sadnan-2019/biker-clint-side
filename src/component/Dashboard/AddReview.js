@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const AddReview = () => {
@@ -22,6 +23,7 @@ const AddReview = () => {
   .then(res => res.json())
   .then(result =>{
             console.log(result)
+            toast("Add review success")
         
         
         })
@@ -30,9 +32,9 @@ const AddReview = () => {
 
   return (
    
-  <div className="card   flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-    <h1 className=" font-bold text-2xl text-center">Add Tool</h1>
-    <div className="card-body  w-full">
+  <div className="card   mt-5   flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <h1 className=" font-bold text-2xl text-center">Add Your Review</h1>
+    <div className="card-body w-full">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className=" mt-5   p-5 "
