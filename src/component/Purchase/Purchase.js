@@ -25,7 +25,7 @@ const Purchase = () => {
 
   const handlePurchase = (event) => {
     event.preventDefault();
-    console.log("kkk");
+    // console.log("kkk");
     const orders = {
       toolsId: _id,
       toolsName: name,

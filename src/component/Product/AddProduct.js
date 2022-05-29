@@ -5,7 +5,7 @@ const AddProduct = () => {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data, e) => {
-          console.log(data);
+          // console.log(data);
     e.target.reset();
 
     const url=(`http://localhost:5000/tools`)
