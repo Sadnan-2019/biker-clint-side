@@ -19,9 +19,9 @@ const makeAdmin=()=>{
        }
      })
      .then(data=>{
-      if(data.modiFiedCount >0){
+      if(data.modifiedCount > 0){
         toast("Make Admin Done")
-        console.log(data)
+        // console.log(data)
         refetch()
       }
      })
