@@ -13,11 +13,17 @@ const makeAdmin=()=>{
      }
      
      })
-     .then(res => res.json())
+     .then(res => {
+       if(res.status === 403){
+         toast.error("Faild make admin")
+       }
+     })
      .then(data=>{
-       toast("Make Admin Done")
-       console.log(data)
-       refetch()
+      if(data.modiFiedCount >0){
+        toast("Make Admin Done")
+        console.log(data)
+        refetch()
+      }
      })
 
 }
