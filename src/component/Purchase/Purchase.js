@@ -15,13 +15,7 @@ const Purchase = () => {
       .then((data) => setPurchase(data));
   }, []);
 
-  const {
-    _id,
-    name,
-    price,
-    suppliername,
-    img,
-  } = purchase;
+  const { _id, name, price, suppliername, img } = purchase;
 
   const handlePurchase = (event) => {
     event.preventDefault();
