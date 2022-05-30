@@ -9,19 +9,17 @@ const ManageTools = () => {
 
     const proceed = window.confirm("Are you sure");
     if (proceed) {
-      const url = `http://localhost:5000/delete-tools/${id}`;
+      const url = `https://shrouded-beyond-12388.herokuapp.com/delete-tools/${id}`;
       fetch(url, {
         method: "DELETE",
-       
       })
         .then((res) => res.json())
         .then((data) => {
-                  const remaning = tools.filter(tool=> tool._id !== id);
-                  setTools(remaning);
+          const remaning = tools.filter((tool) => tool._id !== id);
+          setTools(remaning);
 
-          console.log(data)
-
-});
+          console.log(data);
+        });
     }
   };
 

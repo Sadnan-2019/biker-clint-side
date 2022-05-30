@@ -8,32 +8,31 @@ import Loading from "../Loading/Loading";
 const MyOrder = () => {
   const [orders, setOrder] = useState([]);
   const [user, loading, error] = useAuthState(auth);
-  const navigate=useNavigate();
- 
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/order?customerEmail=${user.email}`,{
+      fetch(
+        `https://shrouded-beyond-12388.herokuapp.com/order?customerEmail=${user.email}`,
+        {
           method: "GET",
           headers: {
             authorization: `Bearer ${localStorage.getItem("accessToken")}`,
           },
-
-      })
+        }
+      )
         .then((res) => {
-                  console.log("res",res)
-                  if(res.status === 403  || res.status === 401){
-                            signOut(auth);
-                            localStorage.removeItem("accessToken")
-                            navigate("/")
-
-
-                  }
-          return res.json()
+          console.log("res", res);
+          if (res.status === 403 || res.status === 401) {
+            signOut(auth);
+            localStorage.removeItem("accessToken");
+            navigate("/");
+          }
+          return res.json();
         })
         .then((data) => setOrder(data));
     }
   }, [user]);
- 
 
   return (
     <div>
@@ -51,7 +50,6 @@ const MyOrder = () => {
               <th>Quentity</th>
               <th>Phone</th>
               <th></th>
-             
             </tr>
           </thead>
           <tbody>

@@ -5,7 +5,7 @@ import Tool from "../Tool/Tool";
 const Tools = () => {
   const [tools, setTools] = useTools();
   // useEffect(() => {
-  //   fetch("http://localhost:5000/tools")
+  //   fetch("https://shrouded-beyond-12388.herokuapp.com/tools")
   //     .then((res) => res.json())
   //     .then((data) => setTools(data));
   // }, []);

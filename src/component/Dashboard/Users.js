@@ -7,8 +7,12 @@ import User from "./User";
 const Users = () => {
   // const [users,setUsers] = useState([])
 
-  const { data: users, isLoading,refetch } = useQuery("users", () =>
-    fetch("http://localhost:5000/users", {
+  const {
+    data: users,
+    isLoading,
+    refetch,
+  } = useQuery("users", () =>
+    fetch("https://shrouded-beyond-12388.herokuapp.com/users", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -28,10 +32,9 @@ const Users = () => {
           <thead>
             <tr>
               <th>SL No</th>
-             
+
               <th>Email</th>
-              <th >Action</th>
-             
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>

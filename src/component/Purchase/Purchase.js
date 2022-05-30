@@ -10,7 +10,7 @@ const Purchase = () => {
   const [user, loading, error] = useAuthState(auth);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/purchase/${toolId}`)
+    fetch(`https://shrouded-beyond-12388.herokuapp.com/purchase/${toolId}`)
       .then((res) => res.json())
       .then((data) => setPurchase(data));
   }, []);
@@ -34,7 +34,7 @@ const Purchase = () => {
     };
     // console.log(orders)
 
-    fetch(`http://localhost:5000/orders`, {
+    fetch(`https://shrouded-beyond-12388.herokuapp.com/orders`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
