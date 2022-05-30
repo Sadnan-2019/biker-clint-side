@@ -10,6 +10,26 @@ const MyOrder = () => {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
 
+
+  const handleCancel = (id) => {
+    // console.log(id)
+
+    const proceed = window.confirm("Are you sure");
+    if (proceed) {
+      const url = `https://shrouded-beyond-12388.herokuapp.com/delete-tools/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const remaning = orders.filter((order) => order._id !== id);
+          setOrder(remaning);
+
+          console.log(data);
+        });
+    }
+  };
+
   useEffect(() => {
     if (user) {
       fetch(
@@ -65,6 +85,9 @@ const MyOrder = () => {
                 <td>{order.phone}</td>
                 <td>
                   <img src={order.img} alt="" className="w-[20%]" />
+                </td>
+                <td>
+                  <button onClick={handleCancel}>Cancel</button>
                 </td>
               </tr>
             ))}
