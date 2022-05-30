@@ -19,6 +19,7 @@ import Dashboard from "./component/Dashboard/Dashboard";
 import MyOrder from "./component/Dashboard/MyOrder";
 import AddReview from "./component/Dashboard/AddReview";
 import MyProfile from "./component/Dashboard/MyProfile";
+import Portfolio from "./component/Portfolio/Portfolio";
 import Users from "./component/Dashboard/Users";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/portfolio" element={<Portfolio />}></Route>
         <Route path="login" element={<Login />}></Route>
         {/* <Route path="login" element={<Login />}></Route> */}
         <Route path="/signup" element={<SignUp />}></Route>

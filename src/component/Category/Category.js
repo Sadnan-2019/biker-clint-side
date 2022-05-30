@@ -10,10 +10,10 @@ const Category = () => {
       <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 px-12">
 
 
-      <div class="card  bg-gradient-to-r from-green-400 to-blue-500 shadow-xl  text-white mb-5 mt-12">
+      <div class="card   bg-gradient-to-r from-green-400 to-blue-500 shadow-xl  text-white mb-5 mt-12">
         <div class="card-body">
         <h2 class="card-title">Engine and Transmission</h2>
-          <p>Many Types of Lighter We Provide</p>
+       
           <div class="flex items-center   ">
             <div>
               <div class="avatar">
@@ -40,7 +40,7 @@ const Category = () => {
       <div class="card  bg-gradient-to-r from-green-400 to-blue-500 shadow-xl  text-white mb-5 mt-12">
         <div class="card-body">
         <h2 class="card-title">Lighter</h2>
-          <p>Many Types of Lighter We Provide</p>
+        
           <div class="flex items-center   ">
             <div>
               <div class="avatar">
@@ -67,7 +67,7 @@ const Category = () => {
       <div class="card  bg-gradient-to-r from-green-400 to-blue-500 shadow-xl  text-white mb-5 mt-12">
         <div class="card-body">
           <h2 class="card-title">Brekings</h2>
-          <p>Many Types of Brekings We Provide</p>
+        
           <div class="flex items-center   ">
             <div>
               <div class="avatar">
@@ -93,7 +93,7 @@ const Category = () => {
       <div class="card  bg-gradient-to-r from-green-400 to-blue-500 shadow-xl  text-white mb-5 mt-12">
         <div class="card-body">
         <h2 class="card-title">Wheels</h2>
-          <p>Many Types of Lighter We Provide</p>
+           
           <div class="flex items-center   ">
             <div>
               <div class="avatar">

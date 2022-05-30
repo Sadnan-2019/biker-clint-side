@@ -84,19 +84,19 @@ const Navber = () => {
             {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl" href="">
+        <Link to="/" className="btn btn-ghost normal-case text-xl" href="">
           <img
             className="w-20"
             alt=""
             src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/178218993/original/4a8fce7a4da367e67c1d7842e04fa817c881ebbf/design-amazing-motorcycle-or-bike-logo.jpg"
           />
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{navItems}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">My Portfolio</a>
+        <Link to="/portfolio" className="btn">My Portfolio</Link>
         <label
           tabindex="0"
           className="btn btn-ghost lg:hidden"

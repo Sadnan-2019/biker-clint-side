@@ -8,14 +8,16 @@ useEffect(()=>{
 
   fetch(`http://localhost:5000/review`)
   .then(res => res.json())
-  .then(data =>console.log(data))
+  .then(data =>setReview(data))
 },[])
 
 
   return (
     <div>
+<h2 class="text-center text-slate-800 text-4xl font-bold   py-10">Our Customer Review</h2>
+<div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 px-12 py-12 ">
 
-      <div className="">
+
 {
 
   reviews.map(review =><Newreview
