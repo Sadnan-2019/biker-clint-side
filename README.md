@@ -30,6 +30,7 @@
 * Deploy Heroku
 * JWT
 * USE MONGODB
+* Use React Hook Form
 
 
 

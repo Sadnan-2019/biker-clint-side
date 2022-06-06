@@ -16,7 +16,7 @@ const MyOrder = () => {
 
     const proceed = window.confirm("Are you sure");
     if (proceed) {
-      const url = `https://shrouded-beyond-12388.herokuapp.com/delete-tools/${id}`;
+      const url = `https://shrouded-beyond-12388.herokuapp.com/delete-order/${id}`;
       fetch(url, {
         method: "DELETE",
       })
