@@ -7,7 +7,7 @@
 
 # Clint Side:https://github.com/Sadnan-2019/biker-clint-side
 
-# Server Side:https://github.com/programming-hero-web-course1/manufacturer-website-server-side-Sadnan-2019
+# Server Side:https://github.com/Sadnan-2019/biker-server-side
 
 
  
