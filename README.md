@@ -5,7 +5,7 @@
 # Live project Link: https://bike-manufacture-tools.web.app/
 
 
-# Clint Side:https://github.com/programming-hero-web-course1/manufacturer-website-client-side-Sadnan-2019
+# Clint Side:https://github.com/Sadnan-2019/biker-clint-side
 
 # Server Side:https://github.com/programming-hero-web-course1/manufacturer-website-server-side-Sadnan-2019
 
